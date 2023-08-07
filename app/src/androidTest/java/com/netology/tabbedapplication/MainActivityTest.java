@@ -50,15 +50,8 @@ public class MainActivityTest {
                         isDisplayed()));
         textView.check(matches(withText("Page: 1")));
 
-
-        ViewInteraction tabView = onView(
-                allOf(withContentDescription("Tab 2"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.tabs),
-                                        0),
-                                1),
-                        isDisplayed()));
+        ViewInteraction tabView = onView(withContentDescription("Tab 2"));
+        tabView.check(matches(isDisplayed()));
         tabView.perform(click());
 
         ViewInteraction textView2 = onView(
